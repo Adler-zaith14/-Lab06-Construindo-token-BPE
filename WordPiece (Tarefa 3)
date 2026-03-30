@@ -1,0 +1,11 @@
+from transformers import AutoTokenizer
+
+tokenizador = AutoTokenizer.from_pretrained("bert-base-multilingual-cased")
+
+frase = "Os hiper-parâmetros do transformer são inconstitucionalmente difíceis de ajustar."
+
+tokens = tokenizador.tokenize(frase)
+
+print(f"Frase original:\n  {frase}")
+print(f"\nTokens gerados ({len(tokens)} tokens):")
+print(f"  {tokens}")
