@@ -1,1 +1,1 @@
-# -Lab06-Construindo-token-BPE
+# Lab06-Construindo-token-BPE
