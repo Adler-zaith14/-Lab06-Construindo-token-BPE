@@ -54,7 +54,9 @@ nova_palavra = padrao.sub(
 
 Esse padrão usa grupos de captura `(^| )` e `( |$)` pra garantir que apenas pares isolados por espaço sejam fundidos, evitando substituições erradas no meio de tokens já formados. O código foi revisado e validado manualmente contra os casos de teste do enunciado antes da entrega.
 
-**Anexo Google Colab:**
+## Anexo 
+
+**Google Colab:**
 [https://colab.research.google.com/drive/1pBpHRG0ANdmswHq9PoZVT1wHPzc8uTJd?usp=sharing]
 **Referência:**  
 * GOODFELLOW, Ian; BENGIO, Yoshua; COURVILLE, Aaron. Deep Learning. [S. l.]: MIT Press, 2016..
