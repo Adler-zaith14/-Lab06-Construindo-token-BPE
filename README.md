@@ -58,6 +58,8 @@ Esse padrão usa grupos de captura `(^| )` e `( |$)` pra garantir que apenas par
 
 **Google Colab:**
 [https://colab.research.google.com/drive/1pBpHRG0ANdmswHq9PoZVT1wHPzc8uTJd?usp=sharing]
+
+
 **Referência:**  
 * GOODFELLOW, Ian; BENGIO, Yoshua; COURVILLE, Aaron. Deep Learning. [S. l.]: MIT Press, 2016..
  * JURAFSKY, Daniel; MARTIN, James H. Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models. 3. ed. draft. [S. l.]: Stanford University/University of Colorado at Boulder, 2026..
