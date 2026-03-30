@@ -1,0 +1,47 @@
+import collections
+import re
+
+def get_stats(vocab):
+    pares = collections.defaultdict(int)
+    for palavra, freq in vocab.items():
+        simbolos = palavra.split()
+        for i in range(len(simbolos) - 1):
+            pares[simbolos[i], simbolos[i + 1]] += freq
+    return pares
+
+def merge_vocab(par, v_in):
+    v_out = {}
+    grande_par = re.escape(' '.join(par))
+    padrao = re.compile(r'(^| )' + grande_par + r'( |$)')
+    for palavra in v_in:
+        nova_palavra = padrao.sub(
+            lambda m: m.group(1) + ''.join(par) + m.group(2),
+            palavra
+        )
+        v_out[nova_palavra] = v_in[palavra]
+    return v_out
+
+vocab = {
+    'l o w </w>': 5,
+    'l o w e r </w>': 2,
+    'n e w e s t </w>': 6,
+    'w i d e s t </w>': 3
+}
+
+stats_inicial = get_stats(vocab)
+print(f"Frequência do par ('e', 's'): {stats_inicial[('e', 's')]}")
+print(f"Esperado: 9  |  {'OK' if stats_inicial[('e', 's')] == 9 else 'ERRO'}")
+
+num_iteracoes = 5
+
+for i in range(num_iteracoes):
+    stats = get_stats(vocab)
+    if not stats:
+        break
+    melhor_par = max(stats, key=stats.get)
+    freq_melhor = stats[melhor_par]
+    vocab = merge_vocab(melhor_par, vocab)
+    print(f"\nRodada {i + 1}")
+    print(f"Melhor par: {melhor_par}  (frequência: {freq_melhor})")
+    print(f"Vocab atual: {vocab}")
+    print("-" * 50)
